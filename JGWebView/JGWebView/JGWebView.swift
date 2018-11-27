@@ -18,18 +18,30 @@ open class JGWebView: WKWebView, WKUIDelegate, WKNavigationDelegate {
         initialize()
     }
     
-    
     required public init?(coder: NSCoder) {
         super.init(coder: coder)
         initialize()
     }
     
     // MARK: - Public
+    public func addUserAgentString(string: String) {
+        let webConfiguration = WKWebViewConfiguration()
+        webConfiguration.applicationNameForUserAgent = "\(string)"
+        let webView = WKWebView(frame: .zero, configuration: webConfiguration)
+        webView.evaluateJavaScript("navigator.userAgent") { [weak self] (userAgent, error) in
+            _ = webView // 메모리 해제 방어용
+            print("addUserAgentString: \(userAgent ?? "-")")
+            self?.customUserAgent = userAgent as? String
+        }
+    }
     
     // MARK: - Private
     private func initialize() {
         self.uiDelegate = self
         self.navigationDelegate = self
+        
+        allowsLinkPreview = false
+        allowsBackForwardNavigationGestures = true
     }
     
 }
