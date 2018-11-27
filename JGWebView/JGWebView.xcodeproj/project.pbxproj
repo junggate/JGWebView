@@ -11,6 +11,8 @@
 		14C5A76E21ACD3610021159B /* JGWebViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C5A76D21ACD3610021159B /* JGWebViewTests.swift */; };
 		14C5A7C121ACD40E0021159B /* JGWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C5A7C021ACD40E0021159B /* JGWebView.swift */; };
 		14C5A7C221ACD4250021159B /* JGWebView.swift in Headers */ = {isa = PBXBuildFile; fileRef = 14C5A7C021ACD40E0021159B /* JGWebView.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		14C5A7C921ACE5120021159B /* JGWebViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C5A7C821ACE5120021159B /* JGWebViewConfiguration.swift */; };
+		14C5A7CA21ACE5900021159B /* JGWebViewConfiguration.swift in Headers */ = {isa = PBXBuildFile; fileRef = 14C5A7C821ACE5120021159B /* JGWebViewConfiguration.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +32,7 @@
 		14C5A76D21ACD3610021159B /* JGWebViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGWebViewTests.swift; sourceTree = "<group>"; };
 		14C5A76F21ACD3610021159B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14C5A7C021ACD40E0021159B /* JGWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGWebView.swift; sourceTree = "<group>"; };
+		14C5A7C821ACE5120021159B /* JGWebViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGWebViewConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +77,7 @@
 			children = (
 				14C5A76321ACD3610021159B /* Info.plist */,
 				14C5A7C021ACD40E0021159B /* JGWebView.swift */,
+				14C5A7C821ACE5120021159B /* JGWebViewConfiguration.swift */,
 			);
 			path = JGWebView;
 			sourceTree = "<group>";
@@ -95,6 +99,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14C5A7C221ACD4250021159B /* JGWebView.swift in Headers */,
+				14C5A7CA21ACE5900021159B /* JGWebViewConfiguration.swift in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14C5A7C121ACD40E0021159B /* JGWebView.swift in Sources */,
+				14C5A7C921ACE5120021159B /* JGWebViewConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

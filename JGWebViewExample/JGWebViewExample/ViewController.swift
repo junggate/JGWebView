@@ -18,7 +18,5 @@ class ViewController: UIViewController {
 
         jgWebView.addUserAgentString(string: "TestApp")
     }
-
-
 }
 

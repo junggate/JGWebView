@@ -9,9 +9,14 @@
 import UIKit
 import WebKit
 
+public protocol JGWebViewDelegate: WKUIDelegate, WKNavigationDelegate {
+    
+}
+
 open class JGWebView: WKWebView, WKUIDelegate, WKNavigationDelegate {
     
-    open var webViewDelegate: (WKUIDelegate & WKNavigationDelegate)?
+    open var webViewDelegate: JGWebViewDelegate?
+    open var webViewConfiguration: JGWebViewConfiguration?
     
     public override init(frame: CGRect, configuration: WKWebViewConfiguration) {
         super.init(frame: frame, configuration: configuration)
@@ -39,6 +44,7 @@ open class JGWebView: WKWebView, WKUIDelegate, WKNavigationDelegate {
     private func initialize() {
         self.uiDelegate = self
         self.navigationDelegate = self
+        webViewConfiguration = JGWebViewConfiguration()
         
         allowsLinkPreview = false
         allowsBackForwardNavigationGestures = true
@@ -57,6 +63,15 @@ extension JGWebView {
     }
     
     private func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
+        
+        if webViewConfiguration?.showAlertController ?? false {
+            let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil))
+            let rootViewController = UIApplication.shared.windows.first?.rootViewController
+            
+            rootViewController?.present(alertController, animated: true, completion: nil)
+        }
+
         webViewDelegate?.webView?(webView, runJavaScriptAlertPanelWithMessage: message, initiatedByFrame: frame, completionHandler: completionHandler)
     }
     
