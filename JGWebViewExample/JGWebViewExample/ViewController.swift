@@ -16,7 +16,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+//        let configuration = JGWebViewConfiguration()
+        
         jgWebView.addUserAgentString(string: "TestApp")
+        
+        
     }
 }
 

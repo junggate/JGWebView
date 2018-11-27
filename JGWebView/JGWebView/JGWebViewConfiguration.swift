@@ -8,6 +8,9 @@
 
 import UIKit
 
-public struct JGWebViewConfiguration {
-    var showAlertController = true
+open class JGWebViewConfiguration: NSObject {
+    public static var shared: JGWebViewConfiguration?
+    
+    open var showAlertController:Bool = true
+    open var addUserAgent: String?
 }

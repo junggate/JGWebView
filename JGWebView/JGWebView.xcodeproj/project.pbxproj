@@ -33,7 +33,7 @@
 		14C5A76F21ACD3610021159B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14C5A7C021ACD40E0021159B /* JGWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGWebView.swift; sourceTree = "<group>"; };
 		14C5A7C821ACE5120021159B /* JGWebViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGWebViewConfiguration.swift; sourceTree = "<group>"; };
-		14C5A7CB21ACE6E40021159B /* JGWebView.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = JGWebView.podspec; path = ../JGWebView.podspec; sourceTree = "<group>"; };
+		14C5A7CB21ACE6E40021159B /* JGWebView.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = JGWebView.podspec; path = ../JGWebView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
