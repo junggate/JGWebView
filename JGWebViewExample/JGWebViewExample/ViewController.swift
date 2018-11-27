@@ -8,15 +8,15 @@
 
 import UIKit
 import JGWebView
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var jgWebView: JGWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        jgWebView.addUserAgentString(string: "TestApp")
     }
-
-
 }
 

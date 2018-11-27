@@ -10,7 +10,9 @@
 		14C5A76921ACD3610021159B /* JGWebView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14C5A75F21ACD3610021159B /* JGWebView.framework */; };
 		14C5A76E21ACD3610021159B /* JGWebViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C5A76D21ACD3610021159B /* JGWebViewTests.swift */; };
 		14C5A7C121ACD40E0021159B /* JGWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C5A7C021ACD40E0021159B /* JGWebView.swift */; };
-		14C5A7C221ACD4250021159B /* JGWebView.swift in Headers */ = {isa = PBXBuildFile; fileRef = 14C5A7C021ACD40E0021159B /* JGWebView.swift */; };
+		14C5A7C221ACD4250021159B /* JGWebView.swift in Headers */ = {isa = PBXBuildFile; fileRef = 14C5A7C021ACD40E0021159B /* JGWebView.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		14C5A7C921ACE5120021159B /* JGWebViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C5A7C821ACE5120021159B /* JGWebViewConfiguration.swift */; };
+		14C5A7CA21ACE5900021159B /* JGWebViewConfiguration.swift in Headers */ = {isa = PBXBuildFile; fileRef = 14C5A7C821ACE5120021159B /* JGWebViewConfiguration.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +32,8 @@
 		14C5A76D21ACD3610021159B /* JGWebViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGWebViewTests.swift; sourceTree = "<group>"; };
 		14C5A76F21ACD3610021159B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14C5A7C021ACD40E0021159B /* JGWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGWebView.swift; sourceTree = "<group>"; };
+		14C5A7C821ACE5120021159B /* JGWebViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGWebViewConfiguration.swift; sourceTree = "<group>"; };
+		14C5A7CB21ACE6E40021159B /* JGWebView.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = JGWebView.podspec; path = ../JGWebView.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 		14C5A75521ACD3610021159B = {
 			isa = PBXGroup;
 			children = (
+				14C5A7CB21ACE6E40021159B /* JGWebView.podspec */,
 				14C5A76121ACD3610021159B /* JGWebView */,
 				14C5A76C21ACD3610021159B /* JGWebViewTests */,
 				14C5A76021ACD3610021159B /* Products */,
@@ -74,6 +79,7 @@
 			children = (
 				14C5A76321ACD3610021159B /* Info.plist */,
 				14C5A7C021ACD40E0021159B /* JGWebView.swift */,
+				14C5A7C821ACE5120021159B /* JGWebViewConfiguration.swift */,
 			);
 			path = JGWebView;
 			sourceTree = "<group>";
@@ -95,6 +101,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14C5A7C221ACD4250021159B /* JGWebView.swift in Headers */,
+				14C5A7CA21ACE5900021159B /* JGWebViewConfiguration.swift in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14C5A7C121ACD40E0021159B /* JGWebView.swift in Sources */,
+				14C5A7C921ACE5120021159B /* JGWebViewConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,14 +354,15 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = Z899367H3S;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = JGWebView/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -361,6 +370,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.junggate.JGWebView;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -373,14 +383,15 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = Z899367H3S;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = JGWebView/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -388,6 +399,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.junggate.JGWebView;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
