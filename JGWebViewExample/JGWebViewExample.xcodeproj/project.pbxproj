@@ -14,6 +14,8 @@
 		14C5A79021ACD3720021159B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C5A78E21ACD3720021159B /* LaunchScreen.storyboard */; };
 		14C5A79B21ACD3720021159B /* JGWebViewExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C5A79A21ACD3720021159B /* JGWebViewExampleTests.swift */; };
 		14C5A7A621ACD3720021159B /* JGWebViewExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C5A7A521ACD3720021159B /* JGWebViewExampleUITests.swift */; };
+		14C5A7C321ACD4B80021159B /* JGWebView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14C5A7B921ACD3C80021159B /* JGWebView.framework */; };
+		14C5A7C421ACD4B80021159B /* JGWebView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 14C5A7B921ACD3C80021159B /* JGWebView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +54,28 @@
 			remoteGlobalIDString = 14C5A75E21ACD3610021159B;
 			remoteInfo = JGWebView;
 		};
+		14C5A7C521ACD4B80021159B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14C5A7B321ACD3C80021159B /* JGWebView.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 14C5A75E21ACD3610021159B;
+			remoteInfo = JGWebView;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		14C5A7C721ACD4B80021159B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				14C5A7C421ACD4B80021159B /* JGWebView.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		14C5A78221ACD3700021159B /* JGWebViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JGWebViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14C5A7C321ACD4B80021159B /* JGWebView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,11 +191,13 @@
 				14C5A77E21ACD3700021159B /* Sources */,
 				14C5A77F21ACD3700021159B /* Frameworks */,
 				14C5A78021ACD3700021159B /* Resources */,
+				14C5A7C721ACD4B80021159B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				14C5A7BF21ACD3D70021159B /* PBXTargetDependency */,
+				14C5A7C621ACD4B80021159B /* PBXTargetDependency */,
 			);
 			name = JGWebViewExample;
 			productName = JGWebViewExample;
@@ -351,6 +377,11 @@
 			name = JGWebView;
 			targetProxy = 14C5A7BE21ACD3D70021159B /* PBXContainerItemProxy */;
 		};
+		14C5A7C621ACD4B80021159B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = JGWebView;
+			targetProxy = 14C5A7C521ACD4B80021159B /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -492,10 +523,12 @@
 		14C5A7AB21ACD3720021159B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z899367H3S;
 				INFOPLIST_FILE = JGWebViewExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -510,10 +543,12 @@
 		14C5A7AC21ACD3720021159B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z899367H3S;
 				INFOPLIST_FILE = JGWebViewExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
