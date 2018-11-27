@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "JGWebView"
-  s.version      = "0.0.1"
+  s.version      = "1.0.0"
   s.summary      = "WKWebView의 기본적인 기능을 수행한다."
 
   # This description is used to generate tags and improve search results.
