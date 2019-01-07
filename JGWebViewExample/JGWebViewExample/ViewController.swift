@@ -7,20 +7,31 @@
 //
 
 import UIKit
+import WebKit
 import JGWebView
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, JGWebViewDelegate {
 
     @IBOutlet weak var jgWebView: JGWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        let configuration = JGWebViewConfiguration()
-        
+        jgWebView.webViewDelegate = self
         jgWebView.addUserAgentString(string: "TestApp")
-        
-        
+        jgWebView.load(URLRequest(url: URL(string: "http://zum.com")!))
+    }
+}
+    
+extension ViewController {
+    func webView(_ webView: WKWebView,
+                 decidePolicyFor navigationAction: WKNavigationAction,
+                 decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+
+        print("request \(navigationAction.request.url?.absoluteString ?? "")")
+        print("allHTTPHeaderFields \(navigationAction.request.allHTTPHeaderFields?["User-Agent"] ?? "")\n\n")
+
+        decisionHandler(.allow)
     }
 }
 
