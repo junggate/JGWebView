@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		144D317521E323CC0016CA09 /* JGDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144D317421E323CC0016CA09 /* JGDelegate.swift */; };
+		144D317821E336B20016CA09 /* JGDelegate.swift in Headers */ = {isa = PBXBuildFile; fileRef = 144D317421E323CC0016CA09 /* JGDelegate.swift */; };
 		14C5A76921ACD3610021159B /* JGWebView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14C5A75F21ACD3610021159B /* JGWebView.framework */; };
 		14C5A76E21ACD3610021159B /* JGWebViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C5A76D21ACD3610021159B /* JGWebViewTests.swift */; };
 		14C5A7C121ACD40E0021159B /* JGWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C5A7C021ACD40E0021159B /* JGWebView.swift */; };
@@ -105,6 +106,7 @@
 			files = (
 				14C5A7C221ACD4250021159B /* JGWebView.swift in Headers */,
 				14C5A7CA21ACE5900021159B /* JGWebViewConfiguration.swift in Headers */,
+				144D317821E336B20016CA09 /* JGDelegate.swift in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

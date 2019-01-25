@@ -32,7 +32,12 @@ class JGDelegate: NSObject, WKUIDelegate, WKNavigationDelegate {
             rootViewController?.present(alertController, animated: true, completion: nil)
         }
         
-        webViewDelegate?.webView?(webView, runJavaScriptAlertPanelWithMessage: message, initiatedByFrame: frame, completionHandler: completionHandler)
+        typealias WKNavigationActionMethodType = (WKWebView, String, WKFrameInfo,@escaping()->Void) -> Void
+        if let webViewDelegate = webViewDelegate, webViewDelegate.responds(to: #selector(webView(_:runJavaScriptAlertPanelWithMessage:initiatedByFrame:completionHandler:) as WKNavigationActionMethodType)) {
+            webViewDelegate.webView?(webView, runJavaScriptAlertPanelWithMessage: message, initiatedByFrame: frame, completionHandler: completionHandler)
+        } else {
+            completionHandler()
+        }
     }
     
     func webView(_ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (Bool) -> Void) {
@@ -57,12 +62,21 @@ class JGDelegate: NSObject, WKUIDelegate, WKNavigationDelegate {
     
     // MARK: - WKNavigationDelegate
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        webViewDelegate?.webView?(webView, decidePolicyFor: navigationAction, decisionHandler: decisionHandler)
+        typealias WKNavigationActionMethodType = (WKWebView,WKNavigationAction,@escaping(WKNavigationActionPolicy)->Void) -> Void
+        if let webViewDelegate = webViewDelegate, webViewDelegate.responds(to: #selector(webView(_:decidePolicyFor:decisionHandler:) as WKNavigationActionMethodType)) {
+            webViewDelegate.webView!(webView, decidePolicyFor: navigationAction, decisionHandler: decisionHandler)
+        } else {
+            decisionHandler(.allow)
+        }
     }
+    
     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
-
-        webViewDelegate?.webView?(webView, decidePolicyFor: navigationResponse, decisionHandler: decisionHandler)
-        decisionHandler(.allow)
+        typealias WKNavigationResponseMethodType = (WKWebView,WKNavigationResponse,@escaping(WKNavigationResponsePolicy)->Void) -> Void
+        if let webViewDelegate = webViewDelegate, webViewDelegate.responds(to: #selector(webView(_:decidePolicyFor:decisionHandler:) as WKNavigationResponseMethodType)) {
+            webViewDelegate.webView?(webView, decidePolicyFor: navigationResponse, decisionHandler: decisionHandler)
+        } else {
+            decisionHandler(.allow)
+        }
     }
     
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
@@ -90,8 +104,15 @@ class JGDelegate: NSObject, WKUIDelegate, WKNavigationDelegate {
     }
     
 //    func webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
-//        webViewDelegate?.webView?(webView, didReceive: challenge, completionHandler: completionHandler)
-//        completionHandler(.useCredential, persistence())
+//
+//        typealias WKNavigationActionMethodType = (WKWebView, URLAuthenticationChallenge, @escaping(URLSession.AuthChallengeDisposition, URLCredential?) -> Void) -> Void
+//
+//        if let webViewDelegate = webViewDelegate,
+//            webViewDelegate.responds(to: #selector(webView(_:didReceive:completionHandler:)) as WKNavigationActionMethodType) {
+//            webViewDelegate.webView?(webView, didReceive: challenge, completionHandler: completionHandler)
+//        } else {
+////            decisionHandler(.allow)
+//        }
 //    }
     
     func webViewWebContentProcessDidTerminate(_ webView: WKWebView){
