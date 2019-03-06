@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "JGWebView"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "WKWebView의 기본적인 기능을 수행한다."
 
   # This description is used to generate tags and improve search results.
@@ -80,7 +80,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/junggate/JGWebView.git", :branch => "master", :tag => '1.0.0' }
+  s.source       = { :git => "https://github.com/junggate/JGWebView.git", :branch => "master", :tag => '1.0.1' }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

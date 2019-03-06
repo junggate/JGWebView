@@ -27,18 +27,21 @@ open class JGWebView: UIView {
     
     /// JGWebViewConfiguration.shard 사용 여부
     open var usingSharedConfiguration = true
-    
     open var webView: WKWebView?
+    open var configuration: WKWebViewConfiguration = WKWebViewConfiguration()
     
     private let webDelegate = JGDelegate()
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        initialize()
     }
     
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
+    }
+    
+    open override func awakeFromNib() {
+        super.awakeFromNib()
         initialize()
     }
     
@@ -75,7 +78,7 @@ open class JGWebView: UIView {
     
     // MARK: - Private
     private func initialize() {
-        webView = WKWebView(frame: CGRect(x: 0, y: 0, width: 100, height: 100), configuration: WKWebViewConfiguration())
+        webView = WKWebView(frame: CGRect(x: 0, y: 0, width: 100, height: 100), configuration: configuration)
         guard let webView = webView else { return }
         addSubview(webView)
         
